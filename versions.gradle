@@ -1,0 +1,9 @@
+buildscript {
+    def dep = [:]
+    dep.constraint = 'com.android.support.constraint:constraint-layout:1.1.0'
+    dep.design = 'com.android.support:design:27.1.1'
+    dep.compact = 'com.android.support:appcompat-v7:27.1.1'
+    dep.mlkit = 'com.google.firebase:firebase-ml-vision:16.0.0'
+
+    ext.deps = dep
+}

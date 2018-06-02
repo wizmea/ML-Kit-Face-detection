@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "675150086797",
+    "firebase_url": "https://facedetection-55124.firebaseio.com",
+    "project_id": "facedetection-55124",
+    "storage_bucket": "facedetection-55124.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675150086797:android:28f8825a74766fa1",
+        "android_client_info": {
+          "package_name": "wizmea.co.facedetection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "675150086797-60tgi84o5nrsm0usubkbt7ilfq1jl4qf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "wizmea.co.facedetection",
+            "certificate_hash": "3a402b053fac270ac70178bf55956dd05e7a860c"
+          }
+        },
+        {
+          "client_id": "675150086797-o3qh39fs2nn3o2c1f33342fjk2pebmvt.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "675150086797-o3qh39fs2nn3o2c1f33342fjk2pebmvt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFnk7zFEyv9Bl5z9o7uWkBYm9_hq6oFZ8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "675150086797-o3qh39fs2nn3o2c1f33342fjk2pebmvt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
