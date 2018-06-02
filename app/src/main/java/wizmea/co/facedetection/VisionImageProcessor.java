@@ -7,6 +7,8 @@ import com.google.firebase.ml.common.FirebaseMLException;
 
 import java.nio.ByteBuffer;
 
+import wizmea.co.facedetection.module.GraphicOverlay;
+
 /** An inferface to process the images with different ML Kit detectors and custom image models. */
 public interface VisionImageProcessor {
 

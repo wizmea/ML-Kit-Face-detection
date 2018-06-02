@@ -1,8 +1,7 @@
-package wizmea.co.facedetection;
+package wizmea.co.facedetection.module;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.hardware.camera2.CameraCharacteristics;
 import android.util.AttributeSet;
 import android.view.View;
 

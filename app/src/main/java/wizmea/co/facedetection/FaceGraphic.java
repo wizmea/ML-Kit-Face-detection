@@ -1,5 +1,7 @@
 package wizmea.co.facedetection;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -8,6 +10,8 @@ import com.google.android.gms.vision.CameraSource;
 import com.google.firebase.ml.vision.common.FirebaseVisionPoint;
 import com.google.firebase.ml.vision.face.FirebaseVisionFace;
 import com.google.firebase.ml.vision.face.FirebaseVisionFaceLandmark;
+
+import wizmea.co.facedetection.module.GraphicOverlay;
 
 /**
  * Graphic instance for rendering face position, orientation, and landmarks within an associated
@@ -70,38 +74,57 @@ public class FaceGraphic extends GraphicOverlay.Graphic {
       return;
     }
 
+    //drawRect(canvas,face);
+    showSmiley(canvas,face);
+  }
+
+  private void showSmiley(Canvas canvas, FirebaseVisionFace face){
+    float x = translateX(face.getBoundingBox().centerX());
+    float y = translateY(face.getBoundingBox().centerY());
+    float xOffset = scaleX(face.getBoundingBox().width() / 2.0f);
+    float yOffset = scaleY(face.getBoundingBox().height() / 2.0f);
+    float left = x - xOffset;
+    float top = y - yOffset;
+    float right = x + xOffset;
+    float bottom = y + yOffset;
+    Bitmap bt = BitmapFactory.decodeResource(getApplicationContext().getResources(),R.drawable.happy_2);
+    canvas.drawBitmap(bt,left,top,null);
+  }
+
+
+  private void drawRect(Canvas canvas,FirebaseVisionFace face){
     // Draws a circle at the position of the detected face, with the face's track id below.
     float x = translateX(face.getBoundingBox().centerX());
     float y = translateY(face.getBoundingBox().centerY());
     canvas.drawCircle(x, y, FACE_POSITION_RADIUS, facePositionPaint);
     canvas.drawText("id: " + face.getTrackingId(), x + ID_X_OFFSET, y + ID_Y_OFFSET, idPaint);
     canvas.drawText(
-        "happiness: " + String.format("%.2f", face.getSmilingProbability()),
-        x + ID_X_OFFSET * 3,
-        y - ID_Y_OFFSET,
-        idPaint);
+            "happiness: " + String.format("%.2f", face.getSmilingProbability()),
+            x + ID_X_OFFSET * 3,
+            y - ID_Y_OFFSET,
+            idPaint);
     if (facing == CameraSource.CAMERA_FACING_FRONT) {
       canvas.drawText(
-          "right eye: " + String.format("%.2f", face.getRightEyeOpenProbability()),
-          x - ID_X_OFFSET,
-          y,
-          idPaint);
+              "right eye: " + String.format("%.2f", face.getRightEyeOpenProbability()),
+              x - ID_X_OFFSET,
+              y,
+              idPaint);
       canvas.drawText(
-          "left eye: " + String.format("%.2f", face.getLeftEyeOpenProbability()),
-          x + ID_X_OFFSET * 6,
-          y,
-          idPaint);
+              "left eye: " + String.format("%.2f", face.getLeftEyeOpenProbability()),
+              x + ID_X_OFFSET * 6,
+              y,
+              idPaint);
     } else {
       canvas.drawText(
-          "left eye: " + String.format("%.2f", face.getLeftEyeOpenProbability()),
-          x - ID_X_OFFSET,
-          y,
-          idPaint);
+              "left eye: " + String.format("%.2f", face.getLeftEyeOpenProbability()),
+              x - ID_X_OFFSET,
+              y,
+              idPaint);
       canvas.drawText(
-          "right eye: " + String.format("%.2f", face.getRightEyeOpenProbability()),
-          x + ID_X_OFFSET * 6,
-          y,
-          idPaint);
+              "right eye: " + String.format("%.2f", face.getRightEyeOpenProbability()),
+              x + ID_X_OFFSET * 6,
+              y,
+              idPaint);
     }
 
     // Draws a bounding box around the face.

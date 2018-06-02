@@ -3,18 +3,17 @@ package wizmea.co.facedetection
 import android.graphics.Bitmap
 import android.media.Image
 
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata
+import wizmea.co.facedetection.module.GraphicOverlay
 
 import java.nio.ByteBuffer
 import java.util.concurrent.atomic.AtomicBoolean
 
 /**
  * Abstract base class for ML Kit frame processors. Subclasses need to implement [ ][.onSuccess] to define what they want to with the detection
- * results and [.detectInImage] to specify the detector object.
+ * results and [.detectInImagex] to specify the detector object.
  *
  * @param <T> The type of the detected feature.
 </T> */

@@ -1,4 +1,4 @@
-package wizmea.co.facedetection;
+package wizmea.co.facedetection.module;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

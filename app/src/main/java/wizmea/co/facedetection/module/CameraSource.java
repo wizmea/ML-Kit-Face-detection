@@ -1,4 +1,4 @@
-package wizmea.co.facedetection;
+package wizmea.co.facedetection.module;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -24,6 +24,9 @@ import java.util.ArrayList;
 import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
+
+import wizmea.co.facedetection.FrameMetadata;
+import wizmea.co.facedetection.VisionImageProcessor;
 
 /**
  * Manages the camera and allows UI updates on top of it (e.g. overlaying extra Graphics or
