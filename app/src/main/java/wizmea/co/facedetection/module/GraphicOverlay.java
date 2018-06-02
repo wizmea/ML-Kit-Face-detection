@@ -125,13 +125,6 @@ public class GraphicOverlay extends View {
     postInvalidate();
   }
 
-  /** Removes a graphic from the overlay. */
-  public void remove(Graphic graphic) {
-    synchronized (lock) {
-      graphics.remove(graphic);
-    }
-    postInvalidate();
-  }
 
   /**
    * Sets the camera attributes for size and facing direction, which informs how to transform image

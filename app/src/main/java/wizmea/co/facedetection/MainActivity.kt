@@ -93,26 +93,7 @@ class MainActivity : AppCompatActivity() {
         detector.detectInImage(image).addOnCompleteListener {
             faces -> run {
             for (face in faces.result){
-
-                /*val rect = Rect(face.boundingBox)
-                val paint = Paint()
-                paint.color = Color.BLACK
-                val canvas = Canvas()
-                canvas.drawRect(face.boundingBox,paint)
-
-                imageView.draw(canvas)*/
-
-                imageView
-
-
-                Toast.makeText(this,face.boundingBox.top.toString(),Toast.LENGTH_LONG).show()
-                val emoji = ImageView(this@MainActivity)
-                addContentView(emoji, ViewGroup.LayoutParams(Param.MATCH_PARENT,Param.MATCH_PARENT))
-                //emoji.invalidate()
-                emoji.setImageResource(R.drawable.happy)
-                emoji.requestRectangleOnScreen(face.boundingBox,true)
-
-
+                TODO("do something with it")
             }
         }
 
